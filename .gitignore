@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+*.iws
+*.ipr
+target/
+.settings
+.project
+.classpath
+.externalToolBuilders
+*.class
+*svn/
+.idea/
+*.jar
+~*
+catalina.home_IS_UNDEFINED
+LOG_PATH_IS_UNDEFINED/
+/logs/
+!/catalina.home_IS_UNDEFINED/
+!/LOG_PATH_IS_UNDEFINED/
+/log.file

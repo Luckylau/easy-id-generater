@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: easy-id-server
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+    async:
+      request-timeout: 60000
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 10MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root123
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowMultiQueries=true
+    username: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      test-on-borrow: false
+      validation-query: select 1
+      test-on-return: false
+      remove-abandoned: true
+      pool-prepared-statements: true
+      test-while-idle: true
+server:
+  port: 8080
+
+#mybatis:
+#  mapperLocations: classpath*:mapper/*Mapper.xml
+mybatis-plus:
+  global-config:
+    id-type: 0
+    #字段策略： 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 2
+    #驼峰下划线转换
+    db-column-underline: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  mapperLocations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: lucky.id.generator.dao.entity

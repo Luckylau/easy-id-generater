@@ -1,8 +1,8 @@
 package lucky.id.generator.generator;
 
+import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;
 import lucky.id.generator.exception.IdGeneratorException;
-import lucky.id.generator.util.NetUtils;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -17,14 +17,17 @@ public class SnowflakeIdGenImpl implements IdGenerator {
     private static final Random RANDOM = new Random();
     private final long EPOCH_TIMESTAMP = TimeUnit.MILLISECONDS.toMillis(1685145600000L);
     private long lastTimestamp = -1L;
-    private BitsAllocator bitsAllocator;
+    private final BitsAllocator bitsAllocator;
     private long sequence = 0L;
-    private long workerId;
+    private final long workerId;
 
 
-    public SnowflakeIdGenImpl(String zkAddress, int port) {
-        final String ip = NetUtils.getIp();
-
+    public SnowflakeIdGenImpl(String zkAddress, String ip, int port) {
+        bitsAllocator = BitsAllocator.defaultAllocator();
+        SnowflakeZookeeperHolder holder = new SnowflakeZookeeperHolder(zkAddress, ip, port);
+        holder.init();
+        workerId = holder.getWorkerId();
+        Preconditions.checkArgument(workerId >= 0 && workerId <= bitsAllocator.getMaxWorkerId(), "workerID must gte 0 and lte " + bitsAllocator.getMaxWorkerId());
     }
 
     @Override

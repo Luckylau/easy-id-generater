@@ -43,6 +43,10 @@ public class BitsAllocator {
     private final int timestampShift;
     private final int workerIdShift;
 
+    public static BitsAllocator defaultAllocator() {
+        return new BitsAllocator(41, 10, 12);
+    }
+
     public BitsAllocator(int timestampBits, int workerIdBits, int sequenceBits) {
         // make sure allocated 64 bits
         int allocateTotalBits = signBits + timestampBits + workerIdBits + sequenceBits;

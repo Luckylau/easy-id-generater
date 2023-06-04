@@ -45,3 +45,6 @@ mybatis-plus:
     cache-enabled: false
   mapperLocations: classpath*:mapper/*Mapper.xml
   type-aliases-package: lucky.id.generator.dao.entity
+
+zookeeper:
+  address: 127.0.0.1:2181

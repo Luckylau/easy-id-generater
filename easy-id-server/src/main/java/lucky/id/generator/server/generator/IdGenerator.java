@@ -1,4 +1,4 @@
-package lucky.id.generator.generator;
+package lucky.id.generator.server.generator;
 
 /**
  * @Author luckylau

@@ -1,8 +1,8 @@
-package lucky.id.generator.generator;
+package lucky.id.generator.server.generator;
 
 import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;
-import lucky.id.generator.exception.IdGeneratorException;
+import lucky.id.generator.server.exception.IdGeneratorException;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

@@ -1,9 +1,9 @@
-package lucky.id.generator.service;
+package lucky.id.generator.server.service;
 
 import lombok.extern.slf4j.Slf4j;
-import lucky.id.generator.generator.IdGenerator;
-import lucky.id.generator.generator.SnowflakeIdGenImpl;
-import lucky.id.generator.util.NetUtils;
+import lucky.id.generator.server.generator.IdGenerator;
+import lucky.id.generator.server.generator.SnowflakeIdGenImpl;
+import lucky.id.generator.server.util.NetUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

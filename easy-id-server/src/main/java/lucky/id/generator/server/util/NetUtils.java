@@ -1,4 +1,4 @@
-package lucky.id.generator.util;
+package lucky.id.generator.server.util;
 
 import lombok.extern.slf4j.Slf4j;
 

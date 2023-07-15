@@ -1,4 +1,4 @@
-package lucky.id.generator.exception;
+package lucky.id.generator.server.exception;
 
 /**
  * @Author luckylau

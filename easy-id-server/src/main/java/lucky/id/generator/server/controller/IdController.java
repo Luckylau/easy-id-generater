@@ -1,6 +1,6 @@
-package lucky.id.generator.controller;
+package lucky.id.generator.server.controller;
 
-import lucky.id.generator.service.SnowflakeService;
+import lucky.id.generator.server.service.SnowflakeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

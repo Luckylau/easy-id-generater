@@ -1,12 +1,12 @@
-package lucky.id.generator.generator;
+package lucky.id.generator.server.generator;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Maps;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import lucky.id.generator.exception.IdGeneratorException;
-import lucky.id.generator.util.NamingThreadFactory;
+import lucky.id.generator.server.exception.IdGeneratorException;
+import lucky.id.generator.server.util.NamingThreadFactory;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -21,7 +21,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import static lucky.id.generator.enums.ZookeeperHolder.PATH_FOREVER;
+import static lucky.id.generator.server.enums.ZookeeperHolder.PATH_FOREVER;
 
 /**
  * @Author luckylau

@@ -1,4 +1,4 @@
-package lucky.id.generator.enums;
+package lucky.id.generator.server.enums;
 
 /**
  * @Author luckylau

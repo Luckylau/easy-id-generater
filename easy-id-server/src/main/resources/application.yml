@@ -29,7 +29,7 @@ spring:
       pool-prepared-statements: true
       test-while-idle: true
 server:
-  port: 8080
+  port: 8888
 
 #mybatis:
 #  mapperLocations: classpath*:mapper/*Mapper.xml

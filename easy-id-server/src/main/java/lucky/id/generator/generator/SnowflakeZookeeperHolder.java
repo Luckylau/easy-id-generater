@@ -104,14 +104,14 @@ public class SnowflakeZookeeperHolder {
             try {
                 byte[] data = curator.getData().forPath(PATH_FOREVER + "/" + node + "/data");
                 if (data == null) {
-                    log.error("get node : {} data error", node);
+                    log.warn("get node: {} data error", node);
                     continue;
                 }
                 Endpoint endpoint = mapper.readValue(data, Endpoint.class);
                 sumTimestamp += endpoint.getTimestamp();
                 nodeCount += 1;
             } catch (Exception e) {
-                log.error("get node: {} data error", node, e);
+                log.warn("get node: {} data error", node);
             }
         }
         if (nodeCount == 0) {
